@@ -1,0 +1,8 @@
+
+
+Actualmente, el Instituto Nacional 21 de Junio promueve hábitos saludables entre sus estudiantes mediante charlas, 
+actividades extracurriculares y recomendaciones generales, sin embargo, el seguimiento del cumplimiento de estos 
+hábitos se realiza de manera manual, no existe una herramienta tecnológica que permita centralizar la información, 
+generar reportes de cumplimiento, ni analizar estadísticamente el impacto de los hábitos en el bienestar estudiantil,
+ ya que los datos los datos no se encuentran sistematizados, lo que dificulta la evaluación y la identificación 
+de estudiantes que requieren mayor acompañamiento.
