@@ -37,7 +37,7 @@ CREATE TABLE Seccion (
     FOREIGN KEY (id_grado) REFERENCES Grado(id_grado)
 );
 
--- 6. Tabla Estudiante (depende de Grado)
+--  Tabla Estudiante 
 CREATE TABLE Estudiante (
     id_estudiante INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100),
@@ -62,6 +62,17 @@ CREATE TABLE Registro (
     FOREIGN KEY (id_habito) REFERENCES Habito(id_habito),
     FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
 );
+--  Tabla Reportes 
+CREATE TABLE Reportes (
+    id_reporte INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_reporte VARCHAR(150),
+    tipo_reporte VARCHAR(50),      
+    fecha_generacion DATE,
+    ruta_archivo VARCHAR(255),     
+    id_usuario INT,                
+    parametros TEXT,              
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+);
 
 
 INSERT INTO Grado (nombre_grado, nivel) VALUES
@@ -78,17 +89,16 @@ INSERT INTO Grado (nombre_grado, nivel) VALUES
 
 INSERT INTO Usuario (nombre, apellido, email, contrasena, tipo_usuario, estado) VALUES
 ('Ana', 'Martinez', 'ana.mtz@colegio.com', 'pass123', 'Administrador', 1),
-('Carlos', 'Gomez', 'carlos.g@colegio.com', 'secure456', 'Docente Ciencias', 1),
+('Carlos', 'Gomez', 'carlos.g@colegio.com', 'secure456', 'Docente', 1),
 ('Lucia', 'Lopez', 'lucia.l@colegio.com', 'admin789', 'Administrador', 1),
-('Jorge', 'Rodriguez', 'jorge.r@colegio.com', 'clavedocente', 'Docente Matemáticas', 1),
-('Elena', 'Perez', 'elena.p@colegio.com', 'perez2026', 'Docente Literatura', 1),
-('David', 'Sánchez', 'david.s@colegio.com', 'david99', 'Consejero Escolar', 1),
-('Sofia', 'Diaz', 'sofia.d@colegio.com', 'sofia123', 'Supervisor', 1),
-('Miguel', 'Torres', 'miguel.t@colegio.com', 'torres456', 'Docente Inglés', 1),
+('Jorge', 'Rodriguez', 'jorge.r@colegio.com', 'clavedocente', 'Docente', 1),
+('Elena', 'Perez', 'elena.p@colegio.com', 'perez2026', 'Docente', 1),
+('David', 'Sánchez', 'david.s@colegio.com', 'david99', 'Docente', 1),
+('Sofia', 'Diaz', 'sofia.d@colegio.com', 'sofia123', 'Administrador', 1),
+('Miguel', 'Torres', 'miguel.t@colegio.com', 'torres456', 'Docente', 1),
 ('Laura', 'Castro', 'laura.c@colegio.com', 'laura789', 'Administrador', 1),
-('Pedro', 'Morales', 'pedro.m@colegio.com', 'pedro2026', 'Docente Historia', 1);
+('Pedro', 'Morales', 'pedro.m@colegio.com', 'pedro2026', 'Docente', 1);
 
--- 3. DATOS REALES: HABITO (Situaciones de Secundaria)
 INSERT INTO Habito (nombre_habito, tipo_habito, unidad_medida, estado) VALUES
 ('Entrega de Ensayos', 'Académico', 'Porcentaje', 'Activo'),
 ('Puntualidad en Bloque 1', 'Conducta', 'Minutos tarde', 'Activo'),
@@ -113,7 +123,7 @@ INSERT INTO Seccion (nombre_seccion, id_grado) VALUES
 ('Sección A', 6),
 ('Única', 7);
 
--- 5. DATOS REALES: ESTUDIANTE (Edades de 12 a 17 años)
+
 INSERT INTO Estudiante (nombre, apellido, email, fecha_nacimiento, id_grado) VALUES
 ('Juan', 'Alvarez', 'juan.alvarez@secundaria.com', '2014-04-12', 1),
 ('Maria', 'Benitez', 'maria.benitez@secundaria.com', '2013-08-22', 2),
@@ -149,4 +159,12 @@ INSERT INTO Reportes (nombre_reporte, tipo_reporte, fecha_generacion, ruta_archi
 ('Alumnos en Tutorías de Matemáticas', 'Excel', '2026-05-13', '/outputs/excel/tutorias.xlsx', 4, 'materia=mate'),
 ('Reporte Individual Rosa Espinoza', 'PDF', '2026-05-13', '/outputs/pdf/rep_rosa.pdf', 5, 'estudiante=5'),
 ('Estadísticas de Convivencia Escolar', 'Grafico', '2026-05-13', '/outputs/img/convivencia.png', 6, 'periodo=parcial1');
+
+SELECT * FROM Grado;
+SELECT * FROM Usuario;
+SELECT * FROM Habito;
+SELECT * FROM Seccion;
+SELECT * FROM Estudiante;
+SELECT * FROM Registro;
+SELECT * FROM Reportes;
 
