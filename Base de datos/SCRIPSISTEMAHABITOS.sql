@@ -125,105 +125,87 @@ CREATE TABLE Reportes (
 );
 
 
--- GRADO
+
 INSERT INTO Grado (nombre_grado, nivel) VALUES
-('Primer Grado', 'Primaria'),
-('Segundo Grado', 'Primaria'),
-('Tercer Grado', 'Primaria'),
-('Cuarto Grado', 'Primaria'),
-('Quinto Grado', 'Primaria'),
-('Sexto Grado', 'Primaria'),
-('Septimo Grado', 'Secundaria'),
+('Séptimo Grado', 'Secundaria'),
 ('Octavo Grado', 'Secundaria'),
 ('Noveno Grado', 'Secundaria'),
-('Decimo Grado', 'Secundaria');
+('Décimo Grado', 'Secundaria'),
+('Undécimo Grado', 'Secundaria'),
+('Séptimo Grado B', 'Secundaria'),
+('Octavo Grado B', 'Secundaria'),
+('Noveno Grado B', 'Secundaria'),
+('Décimo Grado B', 'Secundaria'),
+('Undécimo Grado B', 'Secundaria');
 
--- USUARIO
 INSERT INTO Usuario (nombre, apellido, email, contrasena, tipo_usuario, estado) VALUES
-('Ana', 'Martinez', 'ana.mtz@correo.com', 'pass123', 'Administrador', 1),
-('Carlos', 'Gomez', 'carlos.g@correo.com', 'secure456', 'Docente', 1),
-('Lucia', 'Lopez', 'lucia.l@correo.com', 'admin789', 'Administrador', 1),
-('Jorge', 'Rodriguez', 'jorge.r@correo.com', 'clavedocente', 'Docente', 1),
-('Elena', 'Perez', 'elena.p@correo.com', 'perez2026', 'Docente', 1),
-('David', 'Sánchez', 'david.s@correo.com', 'david99', 'Docente', 0),
-('Sofia', 'Diaz', 'sofia.d@correo.com', 'sofia123', 'Docente', 1),
-('Miguel', 'Torres', 'miguel.t@correo.com', 'torres456', 'Administrador', 1),
-('Laura', 'Castro', 'laura.c@correo.com', 'laura789', 'Administrador', 1),
-('Pedro', 'Morales', 'pedro.m@correo.com', 'pedro2026', 'Docente', 1);
+('Ana', 'Martinez', 'ana.mtz@colegio.com', 'pass123', 'Administrador', 1),
+('Carlos', 'Gomez', 'carlos.g@colegio.com', 'secure456', 'Docente Ciencias', 1),
+('Lucia', 'Lopez', 'lucia.l@colegio.com', 'admin789', 'Administrador', 1),
+('Jorge', 'Rodriguez', 'jorge.r@colegio.com', 'clavedocente', 'Docente Matemáticas', 1),
+('Elena', 'Perez', 'elena.p@colegio.com', 'perez2026', 'Docente Literatura', 1),
+('David', 'Sánchez', 'david.s@colegio.com', 'david99', 'Consejero Escolar', 1),
+('Sofia', 'Diaz', 'sofia.d@colegio.com', 'sofia123', 'Supervisor', 1),
+('Miguel', 'Torres', 'miguel.t@colegio.com', 'torres456', 'Docente Inglés', 1),
+('Laura', 'Castro', 'laura.c@colegio.com', 'laura789', 'Administrador', 1),
+('Pedro', 'Morales', 'pedro.m@colegio.com', 'pedro2026', 'Docente Historia', 1);
 
--- HABITO
 INSERT INTO Habito (nombre_habito, tipo_habito, unidad_medida, estado) VALUES
-('Lectura Diaria', 'Academico', 'Paginas', 'Activo'),
-('Asistencia', 'Conducta', 'Dias', 'Activo'),
-('Puntualidad', 'Conducta', 'Minutos tarde', 'Activo'),
-('Entrega de Tareas', 'Academico', 'Porcentaje', 'Activo'),
-('Descanso', 'Salud', 'Interacciones', 'Activo'),
-('Uso de Uniforme', 'Disciplina', 'Cumplimiento', 'Activo'),
-('Respeto a Compañeros', 'Convivencia', 'Incidentes', 'Activo'),
-('Higiene Personal', 'Salud', 'Cumplimiento', 'Activo'),
-('Trabajo en Equipo', 'Social', 'Calificacion', 'Activo'),
-('Orden del Aula', 'Disciplina', 'Cumplimiento', 'Inactivo');
+('Entrega de Ensayos', 'Académico', 'Porcentaje', 'Activo'),
+('Puntualidad en Bloque 1', 'Conducta', 'Minutos tarde', 'Activo'),
+('Participación en Debates', 'Académico', 'Interacciones', 'Activo'),
+('Uso Correcto de Celular', 'Disciplina', 'Llamadas de atención', 'Activo'),
+('Trabajo de Laboratorio', 'Académico', 'Calificación', 'Activo'),
+('Asistencia a Tutorías', 'Apoyo', 'Horas asistidas', 'Activo'),
+('Respeto en Comunidad', 'Convivencia', 'Incidentes', 'Activo'),
+('Cuidado del Mobiliario', 'Disciplina', 'Reportes de daño', 'Activo'),
+('Liderazgo en Proyectos', 'Social', 'Puntos acumulados', 'Activo'),
+('Uso de Uniforme Completo', 'Disciplina', 'Cumplimiento', 'Activo');
 
--- SECCION
 INSERT INTO Seccion (nombre_seccion, id_grado) VALUES
-('Seccion A', 1),
-('Seccion B', 1),
-('Seccion A', 2),
-('Seccion A', 3),
-('Seccion B', 3),
-('Seccion A', 4),
-('Seccion A', 5),
-('Seccion A', 6),
-('Seccion A', 7),
-('Seccion A', 10);
+('Única', 1),
+('Sección A', 2),
+('Sección B', 2),
+('Única', 3),
+('Sección A', 4),
+('Sección B', 4),
+('Matutina', 5),
+('Vespertina', 5),
+('Sección A', 6),
+('Única', 7);
 
--- ESTUDIANTE
 INSERT INTO Estudiante (nombre, apellido, email, fecha_nacimiento, id_grado) VALUES
-('Juan', 'Alvarez', 'juan.alvarez@estudiante.com', '2015-04-12', 1),
-('Maria', 'Benitez', 'maria.benitez@estudiante.com', '2015-08-22', 1),
-('Luis', 'Cabrera', 'luis.cabrera@estudiante.com', '2014-01-15', 2),
-('Andres', 'Delgado', 'andres.delgado@estudiante.com', '2013-11-05', 3),
-('Rosa', 'Espinoza', 'rosa.espinoza@estudiante.com', '2012-06-30', 4),
-('Kevin', 'Flores', 'kevin.flores@estudiante.com', '2011-02-14', 5),
-('Camila', 'Gutierrez', 'camila.gutierrez@estudiante.com', '2010-09-18', 6),
-('Diego', 'Herrera', 'diego.herrera@estudiante.com', '2009-05-25', 7),
-('Natalia', 'Ibarra', 'natalia.ibarra@estudiante.com', '2008-12-01', 8),
-('Gabriel', 'Juarez', 'gabriel.juarez@estudiante.com', '2006-07-07', 10);
+('Juan', 'Alvarez', 'juan.alvarez@secundaria.com', '2014-04-12', 1),
+('Maria', 'Benitez', 'maria.benitez@secundaria.com', '2013-08-22', 2),
+('Luis', 'Cabrera', 'luis.cabrera@secundaria.com', '2012-01-15', 3),
+('Andres', 'Delgado', 'andres.delgado@secundaria.com', '2011-11-05', 4),
+('Rosa', 'Espinoza', 'rosa.espinoza@secundaria.com', '2010-06-30', 5),
+('Kevin', 'Flores', 'kevin.flores@secundaria.com', '2013-02-14', 6),
+('Camila', 'Gutierrez', 'camila.gutierrez@secundaria.com', '2012-09-18', 7),
+('Diego', 'Herrera', 'diego.herrera@secundaria.com', '2011-05-25', 8),
+('Natalia', 'Ibarra', 'natalia.ibarra@secundaria.com', '2010-12-01', 9),
+('Gabriel', 'Juarez', 'gabriel.juarez@secundaria.com', '2009-07-07', 10);
 
--- REGISTRO
 INSERT INTO Registro (id_estudiante, id_habito, fecha_registro, valor, observacion, id_usuario, fecha_creacion) VALUES
 (1, 1, '2026-05-01', 0.0, 'Ausente', 2, '2026-05-01'),
-(2, 1, '2026-05-01', 0.0, 'No cumplió en nada', 2, '2026-05-01'),
-(3, 2, '2026-05-02', 3.0, 'Bajo rendimiento', 4, '2026-05-02'),
+(2, 4, '2026-05-01', 0.0, 'No cumplió en nada', 6, '2026-05-01'),
+(3, 2, '2026-05-02', 15.0, 'Bajo rendimiento', 4, '2026-05-02'),
 (4, 3, '2026-05-02', 0.0, 'Ausente', 4, '2026-05-02'),
-(5, 4, '2026-05-03', 0.0, 'No cumplió en nada', 5, '2026-05-03'),
-(6, 5, '2026-05-03', 2.0, 'Bajo rendimiento', 5, '2026-05-03'),
-(7, 6, '2026-05-04', 0.0, 'Ausente', 10, '2026-05-04'),
-(8, 7, '2026-05-04', 0.0, 'No cumplió en nada', 10, '2026-05-04'),
-(9, 8, '2026-05-05', 1.5, 'Bajo rendimiento', 7, '2026-05-05'),
-(10, 9, '2026-05-05', 0.0, 'Ausente', 7, '2026-05-05');
+(5, 5, '2026-05-03', 0.0, 'No cumplió en nada', 2, '2026-05-03'),
+(6, 1, '2026-05-03', 4.0, 'Bajo rendimiento', 5, '2026-05-03'),
+(7, 10, '2026-05-04', 0.0, 'Ausente', 6, '2026-05-04'),
+(8, 7, '2026-05-04', 3.0, 'No cumplió en nada', 10, '2026-05-04'),
+(9, 2, '2026-05-05', 25.0, 'Bajo rendimiento', 4, '2026-05-05'),
+(10, 4, '2026-05-05', 0.0, 'Ausente', 6, '2026-05-05');
 
--- REPORTES
 INSERT INTO Reportes (nombre_reporte, tipo_reporte, fecha_generacion, ruta_archivo, id_usuario, parametros) VALUES
-('Rendimiento Academico Mayo', 'PDF', '2026-05-10', '/outputs/pdf/rep_mayo.pdf', 1, 'grado=1&seccion=A'),
-('Alumnos con Inasistencias', 'Excel', '2026-05-11', '/outputs/excel/inasistencias.xlsx', 3, 'rango=semanal'),
-('Grafico Cumplimiento Uniforme', 'Grafico', '2026-05-11', '/outputs/img/chart_uniforme.png', 1, 'mes=mayo'),
-('Reporte Individual Juan Alvarez', 'PDF', '2026-05-12', '/outputs/pdf/rep_juan.pdf', 2, 'estudiante=1'),
-('Consolidado de Conducta', 'Excel', '2026-05-12', '/outputs/excel/conducta.xlsx', 4, 'grado=all'),
-('Grafico Lectura Primer Grado', 'Grafico', '2026-05-13', '/outputs/img/chart_lectura.png', 2, 'grado=1'),
-('Lista de Usuarios Activos', 'PDF', '2026-05-13', '/outputs/pdf/usuarios.pdf', 9, 'estado=activo'),
-('Bitacora de Incidentes', 'Excel', '2026-05-13', '/outputs/excel/incidentes.xlsx', 9, 'mes=mayo'),
-('Reporte Individual Maria Benitez', 'PDF', '2026-05-13', '/outputs/pdf/rep_maria.pdf', 5, 'estudiante=2'),
-('Estadisticas Trabajo en Equipo', 'Grafico', '2026-05-13', '/outputs/img/teamwork.png', 7, 'periodo=primer-parcial');
-
-SELECT * FROM Grado;
-SELECT * FROM Usuario;
-SELECT * FROM Habito;
-SELECT * FROM Seccion;
-SELECT * FROM Estudiante;
-SELECT * FROM Registro;
-SELECT * FROM Reportes;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+('Reporte de Alertas Séptimo A', 'PDF', '2026-05-10', '/outputs/pdf/alertas_7a.pdf', 6, 'grado=1'),
+('Uso Indebido de Celulares Octavo', 'Excel', '2026-05-11', '/outputs/excel/celulares_8.xlsx', 9, 'habito=4'),
+('Gráfico de Rendimiento Undécimo', 'Grafico', '2026-05-11', '/outputs/img/promo_2026.png', 1, 'mes=mayo'),
+('Reporte Psicoeducativo Juan Alvarez', 'PDF', '2026-05-12', '/outputs/pdf/rep_juan.pdf', 6, 'estudiante=1'),
+('Consolidado de Tareas Noveno', 'Excel', '2026-05-12', '/outputs/excel/tareas_9.xlsx', 4, 'grado=3'),
+('Gráfico Asistencia Décimo A', 'Grafico', '2026-05-13', '/outputs/img/asistencia_10.png', 2, 'grado=4'),
+('Bitácora de Disciplina General', 'PDF', '2026-05-13', '/outputs/pdf/disciplina.pdf', 9, 'tipo=alerta'),
+('Alumnos en Tutorías de Matemáticas', 'Excel', '2026-05-13', '/outputs/excel/tutorias.xlsx', 4, 'materia=mate'),
+('Reporte Individual Rosa Espinoza', 'PDF', '2026-05-13', '/outputs/pdf/rep_rosa.pdf', 5, 'estudiante=5'),
+('Estadísticas de Convivencia Escolar', 'Grafico', '2026-05-13', '/outputs/img/convivencia.png', 6, 'periodo=parcial1');
