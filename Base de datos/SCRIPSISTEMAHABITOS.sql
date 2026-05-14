@@ -1,129 +1,67 @@
 
+CREATE DATABASE SistemaRegistroHabitos;
+USE SistemaRegistroHabitos;
 
--- -----------------------------------------------------
--- Schema sistemahabitos
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `sistemahabitos` DEFAULT CHARACTER SET utf8mb4 ;
-USE `sistemahabitos` ;
-
--- -----------------------------------------------------
--- Table `sistemahabitos`.`grado`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistemahabitos`.`grado` (
-  `id_grado` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre_grado` VARCHAR(100) NULL DEFAULT NULL,
-  `nivel` VARCHAR(50) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_grado`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `sistemahabitos`.`estudiante`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistemahabitos`.`estudiante` (
-  `id_estudiante` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(100) NULL DEFAULT NULL,
-  `apellido` VARCHAR(100) NULL DEFAULT NULL,
-  `email` VARCHAR(150) NULL DEFAULT NULL,
-  `fecha_nacimiento` DATE NULL DEFAULT NULL,
-  `id_grado` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_estudiante`),
-  INDEX `id_grado` (`id_grado` ASC) VISIBLE,
-  CONSTRAINT `estudiante_ibfk_1`
-    FOREIGN KEY (`id_grado`)
-    REFERENCES `sistemahabitos`.`grado` (`id_grado`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `sistemahabitos`.`habito`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistemahabitos`.`habito` (
-  `id_habito` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre_habito` VARCHAR(100) NULL DEFAULT NULL,
-  `tipo_habito` VARCHAR(50) NULL DEFAULT NULL,
-  `unidad_medida` VARCHAR(50) NULL DEFAULT NULL,
-  `estado` VARCHAR(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_habito`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `sistemahabitos`.`usuario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistemahabitos`.`usuario` (
-  `id_usuario` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(100) NULL DEFAULT NULL,
-  `apellido` VARCHAR(100) NULL DEFAULT NULL,
-  `email` VARCHAR(150) NULL DEFAULT NULL,
-  `contrasena` VARCHAR(255) NULL DEFAULT NULL,
-  `tipo_usuario` VARCHAR(50) NULL DEFAULT NULL,
-  `estado` TINYINT(1) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_usuario`),
-  UNIQUE INDEX `email` (`email` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `sistemahabitos`.`registro`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistemahabitos`.`registro` (
-  `id_registro` INT(11) NOT NULL AUTO_INCREMENT,
-  `id_estudiante` INT(11) NULL DEFAULT NULL,
-  `id_habito` INT(11) NULL DEFAULT NULL,
-  `fecha_registro` DATE NULL DEFAULT NULL,
-  `valor` FLOAT NULL DEFAULT NULL,
-  `observacion` TEXT NULL DEFAULT NULL,
-  `id_usuario` INT(11) NULL DEFAULT NULL,
-  `fecha_creacion` DATE NULL DEFAULT NULL,
-  PRIMARY KEY (`id_registro`),
-  INDEX `id_estudiante` (`id_estudiante` ASC) VISIBLE,
-  INDEX `id_habito` (`id_habito` ASC) VISIBLE,
-  INDEX `id_usuario` (`id_usuario` ASC) VISIBLE,
-  CONSTRAINT `registro_ibfk_1`
-    FOREIGN KEY (`id_estudiante`)
-    REFERENCES `sistemahabitos`.`estudiante` (`id_estudiante`),
-  CONSTRAINT `registro_ibfk_2`
-    FOREIGN KEY (`id_habito`)
-    REFERENCES `sistemahabitos`.`habito` (`id_habito`),
-  CONSTRAINT `registro_ibfk_3`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `sistemahabitos`.`usuario` (`id_usuario`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `sistemahabitos`.`seccion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistemahabitos`.`seccion` (
-  `id_seccion` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre_seccion` VARCHAR(50) NULL DEFAULT NULL,
-  `id_grado` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_seccion`),
-  INDEX `id_grado` (`id_grado` ASC) VISIBLE,
-  CONSTRAINT `seccion_ibfk_1`
-    FOREIGN KEY (`id_grado`)
-    REFERENCES `sistemahabitos`.`grado` (`id_grado`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
--- Tabla Reportes 
-CREATE TABLE Reportes (
-    id_reporte INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_reporte VARCHAR(150),
-    tipo_reporte VARCHAR(50),      
-    fecha_generacion DATE,
-    ruta_archivo VARCHAR(255),    
-    id_usuario INT,               
-    parametros TEXT,              
-    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+-- Tabla Grado
+CREATE TABLE Grado (
+    id_grado INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_grado VARCHAR(100),
+    nivel VARCHAR(50)
 );
 
+-- Tabla Usuario
+CREATE TABLE Usuario (
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100),
+    email VARCHAR(150) UNIQUE,
+    contrasena VARCHAR(255),
+    tipo_usuario VARCHAR(50),
+    estado BOOLEAN
+);
+
+--  Tabla Habito 
+CREATE TABLE Habito (
+    id_habito INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_habito VARCHAR(100),
+    tipo_habito VARCHAR(50),
+    unidad_medida VARCHAR(50),
+    estado VARCHAR(20)
+);
+
+--  Tabla Seccion 
+CREATE TABLE Seccion (
+    id_seccion INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_seccion VARCHAR(50),
+    id_grado INT,
+    FOREIGN KEY (id_grado) REFERENCES Grado(id_grado)
+);
+
+-- 6. Tabla Estudiante (depende de Grado)
+CREATE TABLE Estudiante (
+    id_estudiante INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100),
+    email VARCHAR(150),
+    fecha_nacimiento DATE,
+    id_grado INT,
+    FOREIGN KEY (id_grado) REFERENCES Grado(id_grado)
+);
+
+-- Tabla Registro
+CREATE TABLE Registro (
+    id_registro INT PRIMARY KEY AUTO_INCREMENT,
+    id_estudiante INT,
+    id_habito INT,
+    fecha_registro DATE,
+    valor FLOAT,
+    observacion TEXT,
+    id_usuario INT,
+    fecha_creacion DATE,
+    FOREIGN KEY (id_estudiante) REFERENCES Estudiante(id_estudiante),
+    FOREIGN KEY (id_habito) REFERENCES Habito(id_habito),
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+);
 
 
 INSERT INTO Grado (nombre_grado, nivel) VALUES
@@ -150,6 +88,7 @@ INSERT INTO Usuario (nombre, apellido, email, contrasena, tipo_usuario, estado) 
 ('Laura', 'Castro', 'laura.c@colegio.com', 'laura789', 'Administrador', 1),
 ('Pedro', 'Morales', 'pedro.m@colegio.com', 'pedro2026', 'Docente Historia', 1);
 
+-- 3. DATOS REALES: HABITO (Situaciones de Secundaria)
 INSERT INTO Habito (nombre_habito, tipo_habito, unidad_medida, estado) VALUES
 ('Entrega de Ensayos', 'Académico', 'Porcentaje', 'Activo'),
 ('Puntualidad en Bloque 1', 'Conducta', 'Minutos tarde', 'Activo'),
@@ -174,6 +113,7 @@ INSERT INTO Seccion (nombre_seccion, id_grado) VALUES
 ('Sección A', 6),
 ('Única', 7);
 
+-- 5. DATOS REALES: ESTUDIANTE (Edades de 12 a 17 años)
 INSERT INTO Estudiante (nombre, apellido, email, fecha_nacimiento, id_grado) VALUES
 ('Juan', 'Alvarez', 'juan.alvarez@secundaria.com', '2014-04-12', 1),
 ('Maria', 'Benitez', 'maria.benitez@secundaria.com', '2013-08-22', 2),
@@ -209,3 +149,4 @@ INSERT INTO Reportes (nombre_reporte, tipo_reporte, fecha_generacion, ruta_archi
 ('Alumnos en Tutorías de Matemáticas', 'Excel', '2026-05-13', '/outputs/excel/tutorias.xlsx', 4, 'materia=mate'),
 ('Reporte Individual Rosa Espinoza', 'PDF', '2026-05-13', '/outputs/pdf/rep_rosa.pdf', 5, 'estudiante=5'),
 ('Estadísticas de Convivencia Escolar', 'Grafico', '2026-05-13', '/outputs/img/convivencia.png', 6, 'periodo=parcial1');
+
