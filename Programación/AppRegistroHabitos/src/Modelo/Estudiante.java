@@ -1,19 +1,22 @@
 package Modelo;
 
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class Estudiante {
-    
+    // Atributos
      private int idEstudiante;
     private String nombre;
     private String apellido;
     private String email;
     private LocalDate fechaNacimiento;
     private int idGrado; 
+
+    public Estudiante() {
+    }
+    
+    
 
     public Estudiante(int idEstudiante, String nombre, String apellido, String email, LocalDate fechaNacimiento, int idGrado) {
         this.idEstudiante = idEstudiante;
@@ -70,39 +73,8 @@ public class Estudiante {
 
     public void setIdGrado(int idGrado) {
         this.idGrado = idGrado;
-    }
+    }}
     
     
 
-    public int calcularEdad() {
-        if (this.fechaNacimiento != null) {
-            return Period.between(this.fechaNacimiento, LocalDate.now()).getYears();
-        }
-        return 0;
-    }
-
-    public boolean agregarEstudiante() {
-        System.out.println("Agregando a: " + this.nombre);
-        return true;
-    }
-
-    public boolean modificarEstudiante() {
-        System.out.println("Modificando estudiante ID: " + this.idEstudiante);
-        return true;
-    }
-
-    public boolean eliminarEstudiante(int id) {
-        System.out.println("Eliminando estudiante con ID: " + id);
-        return true;
-    }
-
-    public Estudiante consultarEstudiante(int id) {
-        System.out.println("Buscando estudiante " + id);
-        return this;
-    }
-
-    public List<Estudiante> listarEstudiantes() {
-        return new ArrayList<>();
-    }
-}
-
+    

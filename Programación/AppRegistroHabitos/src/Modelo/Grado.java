@@ -1,40 +1,37 @@
 
 package Modelo;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class Grado {
      private int idGrado;
     private String nombreGrado;
     private String nivel;
 
-
-    public boolean agregarGrado() {
-        System.out.println("Guardando el grado: " + this.nombreGrado);
-        return true; 
+    public Grado() {}
+    public Grado(int idGrado, String nombreGrado, String nivel) {
+        this.idGrado = idGrado;
+        this.nombreGrado = nombreGrado;
+        this.nivel = nivel;
+    }
+    public int getIdGrado() {
+        return idGrado;
     }
 
-    public boolean modificarGrado() {
-        System.out.println("Modificando datos del grado ID... " + this.idGrado);
-        return true;
+    public void setIdGrado(int idGrado) {
+        this.idGrado = idGrado;
     }
 
-    public boolean eliminarGrado(int id) {
-        System.out.println("Eliminando grado... " + id);
-        return true;
+    public String getNombreGrado() {
+        return nombreGrado;
     }
 
-    public Grado consultarGrado(int id) {
-        System.out.println("Buscando datos del grado... " + id);
-        return this; 
+    public void setNombreGrado(String nombreGrado) {
+        this.nombreGrado = nombreGrado;
     }
 
-    public List<Grado> listarGrados() {
-        System.out.println("Generando lista de grados...");
-        List<Grado> lista = new ArrayList<>();
-        return lista;
+    public String getNivel() {
+        return nivel;
     }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }  
 }
-

@@ -2,8 +2,8 @@
 package Modelo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 
 public class Registro {
@@ -16,26 +16,87 @@ public class Registro {
     private int idUsuario;
     private LocalDate fechaCreacion;
 
-
-    public boolean registrarHabito() {
-        System.out.println("Registrando actividad para el hábito: " + this.idHabito);
-        return true;
+    public Registro() {
     }
 
-    public List<Registro> consultarRegistros() {
-        System.out.println("Obteniendo historial de registros...");
-        return new ArrayList<>();
+    public Registro(int idRegistro, int idEstudiante, int idHabito, LocalDate fechaRegistro, float valor, String observacion, int idUsuario, 
+            LocalDate fechaCreacion) {
+        this.idRegistro = idRegistro;
+        this.idEstudiante = idEstudiante;
+        this.idHabito = idHabito;
+        this.fechaRegistro = fechaRegistro;
+        this.valor = valor;
+        this.observacion = observacion;
+        this.idUsuario = idUsuario;
+        this.fechaCreacion = fechaCreacion;
     }
 
-    public float calcularPromedio() {
-        System.out.println("Calculando promedio del valor...");
-        return 0.0f; 
+    public int getIdRegistro() {
+        return idRegistro;
     }
 
-    public float calcularPorcentajeDeCumplimiento() {
-        System.out.println("Calculando cumplimiento...");
-        return 100.0f;
+    public void setIdRegistro(int idRegistro) {
+        this.idRegistro = idRegistro;
     }
+
+    public int getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
+
+    public int getIdHabito() {
+        return idHabito;
+    }
+
+    public void setIdHabito(int idHabito) {
+        this.idHabito = idHabito;
+    }
+
+    public LocalDate getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDate fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+
+   
 }
     
 

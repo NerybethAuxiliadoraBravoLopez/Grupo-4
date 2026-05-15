@@ -1,33 +1,47 @@
  
 package Modelo;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Sección {
      private int idSeccion;
     private String nombreSeccion;
     private int idGrado; 
 
-
-    public boolean asignarEstudiante() {
-        System.out.println("Asignando estudiante a la sección...");
-        return true;
+    public Sección() {
     }
 
-    public List<Estudiante> listarEstudiantes() {
-        System.out.println("Obteniendo lista de estudiantes de esta sección...");
-        return new ArrayList<>();
+    public Sección(int idSeccion, String nombreSeccion, int idGrado) {
+        this.idSeccion = idSeccion;
+        this.nombreSeccion = nombreSeccion;
+        this.idGrado = idGrado;
     }
 
-    public Grado obtenerGrado() {
-        System.out.println("Consultando el grado al que pertenece esta sección...");
-        return new Grado(); 
+    public int getIdSeccion() {
+        return idSeccion;
     }
 
-    public boolean modificarSeccion() {
-        System.out.println("Actualizando datos de la sección...");
-        return true;
+    public void setIdSeccion(int idSeccion) {
+        this.idSeccion = idSeccion;
     }
+
+    public String getNombreSeccion() {
+        return nombreSeccion;
+    }
+
+    public void setNombreSeccion(String nombreSeccion) {
+        this.nombreSeccion = nombreSeccion;
+    }
+
+    public int getIdGrado() {
+        return idGrado;
+    }
+
+    public void setIdGrado(int idGrado) {
+        this.idGrado = idGrado;
+    }
+
+    
+
 }
 

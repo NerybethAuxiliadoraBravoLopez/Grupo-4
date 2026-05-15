@@ -1,9 +1,6 @@
 
 package Modelo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Hábito {
     
     private int idHabito;
@@ -12,33 +9,55 @@ public class Hábito {
     private String unidadMedida;
     private String estado;
 
-
-    public boolean crearHabito() {
-        System.out.println("Creando nuevo hábito: " + this.nombreHabito);
-        return true;
+    public Hábito() {
     }
 
-    public boolean editarHabito() {
-        System.out.println("Editando el hábito ID: " + this.idHabito);
-        return true;
+    public Hábito(int idHabito, String nombreHabito, String tipoHabito, String unidadMedida, String estado) {
+        this.idHabito = idHabito;
+        this.nombreHabito = nombreHabito;
+        this.tipoHabito = tipoHabito;
+        this.unidadMedida = unidadMedida;
+        this.estado = estado;
     }
 
-    public boolean desactivarHabito() {
-        this.estado = "Inactivo";
-        return true;
+    public int getIdHabito() {
+        return idHabito;
     }
 
-    public boolean reactivarHabito() {
-        this.estado = "Activo";
-        return true;
+    public void setIdHabito(int idHabito) {
+        this.idHabito = idHabito;
     }
 
-    public Hábito consultarHabito() {
-        return this;
+    public String getNombreHabito() {
+        return nombreHabito;
     }
 
-    public List<Habito> listarPorTipo() {
-        return new ArrayList<>();
+    public void setNombreHabito(String nombreHabito) {
+        this.nombreHabito = nombreHabito;
     }
+
+    public String getTipoHabito() {
+        return tipoHabito;
+    }
+
+    public void setTipoHabito(String tipoHabito) {
+        this.tipoHabito = tipoHabito;
+    }
+
+    public String getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(String unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
 }
-
