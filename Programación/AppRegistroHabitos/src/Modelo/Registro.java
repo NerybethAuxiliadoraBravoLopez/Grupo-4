@@ -3,9 +3,6 @@ package Modelo;
 
 import java.time.LocalDate;
 
-
-
-
 public class Registro {
     private int idRegistro;
     private int idEstudiante;
@@ -19,8 +16,8 @@ public class Registro {
     public Registro() {
     }
 
-    public Registro(int idRegistro, int idEstudiante, int idHabito, LocalDate fechaRegistro, float valor, String observacion, int idUsuario, 
-            LocalDate fechaCreacion) {
+    public Registro(int idRegistro, int idEstudiante, int idHabito, LocalDate fechaRegistro, float valor, String observacion, 
+            int idUsuario, LocalDate fechaCreacion) {
         this.idRegistro = idRegistro;
         this.idEstudiante = idEstudiante;
         this.idHabito = idHabito;
