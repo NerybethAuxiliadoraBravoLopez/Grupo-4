@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Grado.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/GradoDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Sección.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/SecciónDAO.java</file>
             <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Estudiante.java</file>
             <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/EstudianteDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Hábito.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/HábitoDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Usuario.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/UsuarioDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Registro.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/RegistroDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Reporte.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/ReporteDAO.java</file>
+            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Conexion/Conexion.java</file>
+            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Vista/AppRegistroHabitos.java</file>
         </group>
     </open-files>
 </project-private>
