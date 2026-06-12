@@ -19,7 +19,7 @@ public class Conexion {
                     USER,
                     PASSWORD
             );
-            System.out.println("Conexión exitosa");
+           // System.out.println("Conexión exitosa");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
