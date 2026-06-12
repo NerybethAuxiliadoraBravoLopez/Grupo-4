@@ -22,21 +22,24 @@ int opcion;
                 case 1:
                     EstudianteVista.main(null);
                     break;
-               
                 case 2:
+                    HabitoVista.main(null);
+                    break;
+                case 3:
                     System.out.println("Saliendo del sistema...");
                     break;
                 default:
                     System.out.println("Opción inválida.");
             }
             
-        } while (opcion != 2);
+        } while (opcion != 3);
     }
     
     private static void mostrarMenuPrincipal() {
         System.out.println("\n--- SISTEMA DE REGISTRO DE HÁBITOS SALUDABLES ---");
         System.out.println("1. Gestionar Estudiantes");
-        System.out.println("2. Salir");
+        System.out.println("2. Gestionar Hábitos");
+        System.out.println("3. Salir");
     }
     }
     

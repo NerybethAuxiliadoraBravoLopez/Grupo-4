@@ -97,6 +97,7 @@ public boolean actualizarEstudiante(Estudiante e) {
         return false;
     }
 }
+//Buscar
  public Estudiante buscarEstudiante(int id) {
         String sql = "SELECT * FROM estudiante WHERE id_estudiante = ?";
         
