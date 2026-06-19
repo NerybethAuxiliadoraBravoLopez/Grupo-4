@@ -122,5 +122,31 @@ public boolean actualizarEstudiante(Estudiante e) {
         }
         return null;
  }
+ 
+ public void mostrarEstudiantesConGrado() {
+    String sql = "SELECT e.id_estudiante, e.nombre, e.apellido, g.nombre_grado " +
+                 "FROM Estudiante e " +
+                 "INNER JOIN Grado g ON e.id_grado = g.id_grado";
+    
+     try (Connection con = Conexion.conectar();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+        
+        System.out.println("\n=== ESTUDIANTES CON SU GRADO ===");
+        System.out.println("ID | NOMBRE | APELLIDO | GRADO");
+        System.out.println("----------------------------------------");
+        
+        while (rs.next()) {
+            System.out.println(rs.getInt("id_estudiante") + " | " +
+                               rs.getString("nombre") + " | " +
+                               rs.getString("apellido") + " | " +
+                               rs.getString("nombre_grado"));
+        }
+        System.out.println("----------------------------------------");
+        
+    } catch (Exception e) {
+        System.out.println("Error en la consulta: " + e.getMessage());
+    }
+}
 }
 

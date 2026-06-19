@@ -3,6 +3,7 @@ package Vista;
 
 import Controlador.EstudianteController;
 import Modelo.Estudiante;
+import Modelo.EstudianteDAO;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -35,13 +36,16 @@ public class EstudianteVista {
                 case 4:
                     eliminarEstudiante();
                     break;
-                case 5:
+                    case 5:
+    new EstudianteDAO().mostrarEstudiantesConGrado();
+    break;
+                case 6:
                     System.out.println("Volviendo al menú principal...");
                     break;
                 default:
                     System.out.println("Opción inválida.");
             }
-            } while (opcion != 5);
+            } while (opcion != 6);
     }
     
     private static void mostrarMenu() {
@@ -50,7 +54,8 @@ public class EstudianteVista {
         System.out.println("2. Agregar estudiante");
         System.out.println("3. Actualizar estudiante");
         System.out.println("4. Eliminar estudiante");
-        System.out.println("5. Volver");
+        System.out.println("5. Ver estudiantes con grado");  
+        System.out.println("6. Volver");
     }
     
     private static void listarEstudiantes() {

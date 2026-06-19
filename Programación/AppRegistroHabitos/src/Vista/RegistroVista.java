@@ -3,6 +3,7 @@ package Vista;
 
 import Controlador.RegistroController;
 import Modelo.Registro;
+import Modelo.RegistroDAO;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -29,10 +30,13 @@ public class RegistroVista {
                 case 2: agregar(); break;
                 case 3: actualizar(); break;
                 case 4: eliminar(); break;
-                case 5: System.out.println("Volviendo..."); break;
+                case 5:
+    new RegistroDAO().mostrarRegistrosConDetalles();
+    break;
+                case 6: System.out.println("Volviendo..."); break;
                 default: System.out.println("Opción inválida.");
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
      private static void mostrarMenu() {
         System.out.println("\n--- REGISTRO DE HÁBITOS DIARIOS ---");
@@ -40,7 +44,8 @@ public class RegistroVista {
         System.out.println("2. Agregar registro");
         System.out.println("3. Actualizar registro");
         System.out.println("4. Eliminar registro");
-        System.out.println("5. Volver");
+        System.out.println("5. Ver registros con detalles"); 
+        System.out.println("6. Volver");
     }
     
     private static void listar() {

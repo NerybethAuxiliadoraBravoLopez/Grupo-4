@@ -99,5 +99,33 @@ public class RegistroDAO {
         }
     }
     
+    public void mostrarRegistrosConDetalles() {
+    String sql = "SELECT r.id_registro, e.nombre AS estudiante, h.nombre_habito AS habito, " +
+                 "r.fecha_registro, r.valor, r.observacion " +
+                 "FROM Registro r " +
+                 "INNER JOIN Estudiante e ON r.id_estudiante = e.id_estudiante " +
+                 "INNER JOIN Habito h ON r.id_habito = h.id_habito";
     
+    try (Connection con = Conexion.conectar();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+        
+        System.out.println("\n=== REGISTROS CON DETALLES ===");
+        System.out.println("ID | ESTUDIANTE | HÁBITO | FECHA | VALOR | OBSERVACIÓN");
+        System.out.println("---------------------------------------------------------------");
+        
+        while (rs.next()) {
+            System.out.println(rs.getInt("id_registro") + " | " +
+                               rs.getString("estudiante") + " | " +
+                               rs.getString("habito") + " | " +
+                               rs.getDate("fecha_registro") + " | " +
+                               rs.getFloat("valor") + " | " +
+                               rs.getString("observacion"));
+        }
+        System.out.println("---------------------------------------------------------------");
+        
+    } catch (Exception e) {
+        System.out.println("Error en la consulta: " + e.getMessage());
+    }
+}
 }
