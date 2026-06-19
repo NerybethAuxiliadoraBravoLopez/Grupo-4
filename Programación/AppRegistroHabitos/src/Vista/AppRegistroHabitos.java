@@ -30,23 +30,26 @@ int opcion;
                     break;
                     case 4:
                         HabitoVista.main(null);
-                case 5:
+                    case 5:
+                        RegistroVista.main(null);
+                case 6:
                     System.out.println("Saliendo del sistema...");
                     break;
                 default:
                     System.out.println("Opción inválida.");
             }
             
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
     
     private static void mostrarMenuPrincipal() {
         System.out.println("\n--- SISTEMA DE REGISTRO DE HÁBITOS SALUDABLES ---");
         System.out.println("1. Gestionar Estudiantes");
         System.out.println("2. Gestionar Grados");
-        System.out.println("3. Gestionar Secciones");  // ← Nueva
+        System.out.println("3. Gestionar Secciones");  
          System.out.println("4. Gestionar Hábitos");
-        System.out.println("4. Salir");
+         System.out.println("5. Registrar Hábitos");
+        System.out.println("6. Salir");
     }
     }
     

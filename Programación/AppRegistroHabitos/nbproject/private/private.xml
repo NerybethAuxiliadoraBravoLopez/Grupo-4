@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Sección.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/SecciónDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/EstudianteDAO.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Controlador/SeccionController.java</file>
-            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Vista/SecciónVista.java</file>
             <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Vista/AppRegistroHabitos.java</file>
+            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/Registro.java</file>
+            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Modelo/RegistroDAO.java</file>
+            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Controlador/RegistroController.java</file>
+            <file>file:/C:/Users/n/Desktop/Grupo%204/Programación/AppRegistroHabitos/src/Vista/RegistroVista.java</file>
         </group>
     </open-files>
 </project-private>
