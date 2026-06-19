@@ -6,6 +6,7 @@ public class Grado {
     private String nivel;
 
     public Grado() {}
+    
     public Grado(int idGrado, String nombreGrado, String nivel) {
         this.idGrado = idGrado;
         this.nombreGrado = nombreGrado;
