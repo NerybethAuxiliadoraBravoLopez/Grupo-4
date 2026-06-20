@@ -14,7 +14,7 @@ import java.util.List;
 public class EstudianteDAO {
     //Listar estudiantes
      public List<Estudiante> listarEstudiantes() {
-        List<Estudiante> lista = new ArrayList<>();
+        List<Estudiante> lista = new ArrayList<>(); //uso de colección
         String sql = "SELECT * FROM estudiante";
         
         try (Connection con = Conexion.conectar();

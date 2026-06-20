@@ -27,7 +27,7 @@ public class Registro {
         this.idUsuario = idUsuario;
         this.fechaCreacion = fechaCreacion;
     }
-
+//Getters y Setters
     public int getIdRegistro() {
         return idRegistro;
     }

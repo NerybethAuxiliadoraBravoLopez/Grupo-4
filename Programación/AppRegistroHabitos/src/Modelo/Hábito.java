@@ -19,7 +19,7 @@ public class Hábito {
         this.unidadMedida = unidadMedida;
         this.estado = estado;
     }
-
+//Getters y Setters
     public int getIdHabito() {
         return idHabito;
     }

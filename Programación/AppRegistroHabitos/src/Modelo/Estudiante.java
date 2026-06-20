@@ -26,7 +26,7 @@ public class Estudiante {
         this.fechaNacimiento = fechaNacimiento;
         this.idGrado = idGrado;
     }
-
+//Getters y Setters
     public int getIdEstudiante() {
         return idEstudiante;
     }

@@ -12,6 +12,8 @@ public class Grado {
         this.nombreGrado = nombreGrado;
         this.nivel = nivel;
     }
+    
+    //Getters y Setters
     public int getIdGrado() {
         return idGrado;
     }

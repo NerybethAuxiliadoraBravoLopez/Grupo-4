@@ -20,18 +20,14 @@ public class RegistroDAO {
         try (Connection con = Conexion.conectar();
              PreparedStatement ps = con.prepareCall(sql);
              ResultSet rs = ps.executeQuery();) {
-           
-            
             while (rs.next()) {
             Registro r = new Registro();
             r.setIdRegistro(rs.getInt("id_registro"));
             r.setIdEstudiante(rs.getInt("id_estudiante"));
             r.setIdHabito(rs.getInt("id_habito"));
-            
             // Validación segura para fecha_registro
             java.sql.Date fRegistro = rs.getDate("fecha_registro");
             r.setFechaRegistro(fRegistro != null ? fRegistro.toLocalDate() : null);
-            
             r.setValor(rs.getFloat("valor"));
             r.setObservacion(rs.getString("observacion"));
             r.setIdUsuario(rs.getInt("id_usuario"));

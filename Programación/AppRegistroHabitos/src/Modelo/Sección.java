@@ -1,10 +1,7 @@
  
 package Modelo;
-
-
-
 public class Sección {
-     private int idSeccion;
+     private int idSeccion; //Atributos privados
     private String nombreSeccion;
     private int idGrado; 
 
@@ -16,7 +13,7 @@ public class Sección {
         this.nombreSeccion = nombreSeccion;
         this.idGrado = idGrado;
     }
-
+//Getters y Setters publicos
     public int getIdSeccion() {
         return idSeccion;
     }
